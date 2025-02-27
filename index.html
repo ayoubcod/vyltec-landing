@@ -164,6 +164,7 @@
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: emailInput.value }),
+                mode: "cors"
             })
             .then(response => response.json())
             .then(data => {
