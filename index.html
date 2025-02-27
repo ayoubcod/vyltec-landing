@@ -160,13 +160,8 @@
                 errorMessage.style.display = "none";
             }
         
-            fetch("https://script.google.com/macros/s/AKfycbwF3_8wADApEk9ASxBiDxKT8VdTiUCWEo_maSBAIDHhsMiqMvGlJDefT5Nf35TEpLjQTQ/exec", {
-                method: "POST",
-                headers: { 
-                    "Content-Type": "application/json" 
-                },
-                body: JSON.stringify({ email: emailInput.value }),
-                mode: "cors"
+            fetch(`https://script.google.com/macros/s/AKfycbxPXuNJbIpjgYwny97lvAUZWptOvS71cg7bXVhoQUWnBnlm-VKS12zzDiH8ys43Dp_pfw/exec?email=${encodeURIComponent(emailInput.value)}`, {
+                method: "GET",
             })
             .then(response => response.json())
             .then(data => {
