@@ -160,22 +160,20 @@
                 errorMessage.style.display = "none";
             }
         
-            fetch(`https://script.google.com/macros/s/AKfycbzRPLyEzsnma9B7CRE_sc_fZKsaNojll6ocl77naFk-sV6zP8lyYXMpWX1NJkcGG7I0/exec?email=${encodeURIComponent(emailInput.value)}`, {
-                method: "GET",
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === "success") {
-                    successMessage.style.display = "block";
-                    duplicateMessage.style.display = "none";
-                    emailInput.value = "";
-                    checkbox.checked = false;
-                } else {
-                    duplicateMessage.style.display = "block";
-                    successMessage.style.display = "none";
+            fetch(`https://script.google.com/macros/s/AKfycbzVhq-xMFzH07LQ5tOKEblJZy-Lz8WN7zi_RMkIDMXfPUOcIyYh3CLInOmx8_Z2Gzgn/exec?email=${encodeURIComponent(emailInput.value)}`)
+              .then(response => response.text())
+              .then(text => {
+                // interpret the text
+                if (text === "success_thanks_for_subscribing") {
+                  successMessage.style.display = "block";
+                  duplicateMessage.style.display = "none";
+                } else if (text === "error_already_subscribed") {
+                  duplicateMessage.style.display = "block";
+                  successMessage.style.display = "none";
                 }
-            })
-            .catch(error => console.error("Error:", error));
+                // reset fields, etc.
+              })
+              .catch(error => console.error("Error:", error));
         }
         
     </script>
