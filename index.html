@@ -147,31 +147,39 @@
         
         function subscribe(event) {
             event.preventDefault();
-            let emailInput = document.getElementById('email');
-            let checkbox = document.getElementById('consent');
-            let errorMessage = document.getElementById('error-message');
-            let successMessage = document.getElementById('success-message');
-            let duplicateMessage = document.getElementById('duplicate-message');
-            
+            let emailInput = document.getElementById("email");
+            let checkbox = document.getElementById("consent");
+            let errorMessage = document.getElementById("error-message");
+            let successMessage = document.getElementById("success-message");
+            let duplicateMessage = document.getElementById("duplicate-message");
+        
             if (!checkbox.checked) {
-                errorMessage.style.display = 'block';
+                errorMessage.style.display = "block";
                 return;
             } else {
-                errorMessage.style.display = 'none';
+                errorMessage.style.display = "none";
             }
-            
-            if (emails.includes(emailInput.value)) {
-                duplicateMessage.style.display = 'block';
-                successMessage.style.display = 'none';
-                return;
-            } else {
-                emails.push(emailInput.value);
-                successMessage.style.display = 'block';
-                duplicateMessage.style.display = 'none';
-                emailInput.value = '';
-                checkbox.checked = false;
-            }
+        
+            fetch("https://script.google.com/macros/s/AKfycbzxqQTjA_KbiiwwwZ_MsuabtKh_QDs9NNiw_yct-10PrCA3nrnvbRsepcQCvHYJNWKimA/exec", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email: emailInput.value }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    successMessage.style.display = "block";
+                    duplicateMessage.style.display = "none";
+                    emailInput.value = "";
+                    checkbox.checked = false;
+                } else {
+                    duplicateMessage.style.display = "block";
+                    successMessage.style.display = "none";
+                }
+            })
+            .catch(error => console.error("Error:", error));
         }
+        
     </script>
 
 </head>
