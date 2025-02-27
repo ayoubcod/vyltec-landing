@@ -160,9 +160,11 @@
                 errorMessage.style.display = "none";
             }
         
-            fetch("https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbzkwmNYyNo1TXEFzMvTzF7nM88zKl22Z691J-gjUvTiKVwcBTWvSv2Ea-X4gzBZXuor/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbwF3_8wADApEk9ASxBiDxKT8VdTiUCWEo_maSBAIDHhsMiqMvGlJDefT5Nf35TEpLjQTQ/exec", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { 
+                    "Content-Type": "application/json" 
+                },
                 body: JSON.stringify({ email: emailInput.value }),
                 mode: "cors"
             })
