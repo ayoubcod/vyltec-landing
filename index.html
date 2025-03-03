@@ -143,12 +143,12 @@
 
         .checkbox-container {
             display: flex;
-            flex-direction: column; /* Allows line breaking */
-            align-items: center; /* Centers everything */
-            justify-content: center; /* Ensures proper spacing */
-            width: 100%;
-            margin-top: 10px;
+            align-items: center; /* Ensures checkbox and text align */
+            justify-content: center; /* Keeps checkbox and text in the same line */
             gap: 10px;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            width: 90%;
+            margin-top: 10px;
         }
 
         .checkbox-container input[type="checkbox"] {
@@ -163,8 +163,6 @@
             align-items: center; /* Keeps label & checkbox aligned */
             gap: 5px;
         }
-
-
 
         .error-message {
             color: red;
@@ -191,11 +189,8 @@
 
         .social-icons img {
             width: 24px;
-            height: 24px;
-        }
 
         /* Media Query for Mobile Devices */
-        @media screen and (max-width: 768px) {
             body {
                 padding-left: 3%;
                 text-align: center;
