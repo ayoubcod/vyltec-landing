@@ -127,27 +127,28 @@
 
         .checkbox-container {
             display: flex;
-            align-items: center;  /* Ensures checkbox and text align */
-            justify-content: center; /* Centers checkbox and label */
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            flex-direction: column; /* Allows line breaking */
+            align-items: center; /* Centers everything */
+            justify-content: center; /* Ensures proper spacing */
             width: 100%;
             margin-top: 10px;
             gap: 10px;
-        }
-
-        .checkbox-container label {
-            flex-grow: 1;
-            font-size: 0.9em;
-            margin: 0;
-            align-items: center;  /* Ensures checkbox and text align */
         }
 
         .checkbox-container input[type="checkbox"] {
             width: 18px;
             height: 18px;
             margin: 0;
-            align-items: center;  /* Ensures checkbox and text align */
         }
+
+        .checkbox-container label {
+            font-size: 0.9em;
+            display: flex;
+            align-items: center; /* Keeps label & checkbox aligned */
+            gap: 5px;
+        }
+
+
 
         button {
             flex-shrink: 0; /* Prevents shrinking */
