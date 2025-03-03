@@ -128,7 +128,7 @@
         .checkbox-container {
             display: flex;
             align-items: center;  /* Ensures checkbox and text align */
-            justify-content: center; /* Centers checkbox and label */
+            justify-content: right; /* Centers checkbox and label */
             flex-wrap: wrap; /* Allows wrapping on smaller screens */
             width: 100%;
             margin-top: 10px;
@@ -238,7 +238,8 @@
                 max-width: 90%;
                 margin: auto;
                 text-align: center;
-                margin-top: 120px; /* Ensures space below the header */
+                margin-top: calc(80px + 5vh); /* Dynamically adjusts below the header */
+                padding-top: 20px;
             }
 
             .container_2, .container_3, .container_4 {
