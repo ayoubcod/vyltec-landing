@@ -102,14 +102,6 @@
             margin-top: 20px;
         }
 
-        .checkbox-container {
-            display: flex;
-            align-items: center;  /* Ensures checkbox and text align */
-            justify-content: space-between; /* Spaces out elements */
-            gap: 10px;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
-        }
-
         input {
             width: 90%;
             padding: 12px 15px;
@@ -121,10 +113,13 @@
             box-sizing: border-box;
         }
 
-        .error-message {
-            color: red;
-            margin-top: 10px;
-            display: none;
+        .checkbox-container {
+            display: flex;
+            align-items: center;  /* Ensures checkbox and text align */
+            justify-content: space-between; /* Spaces out elements */
+            gap: 10px;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            width: 90%;
         }
 
         button {
@@ -139,6 +134,12 @@
             font-weight: lighter;
             transition: background-color 0.3s;
             margin-top: 10px;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
         }
 
         .footer {
