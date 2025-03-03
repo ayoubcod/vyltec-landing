@@ -123,6 +123,19 @@
             margin-top: 10px;
         }
 
+        .checkbox-container label {
+                flex-grow: 1;
+                text-align: left;
+                font-size: 0.9em;
+                margin: 0;
+            }
+
+        .checkbox-container input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+        }
+
         button {
             flex-shrink: 0; /* Prevents shrinking */
             padding: 12px 25px;
@@ -348,8 +361,8 @@
         <form onsubmit="subscribe(event)">
             <input type="email" id="email" placeholder="Enter your email" required oninvalid="this.setCustomValidity('Enter an email address like example@mysite.com.')" oninput="this.setCustomValidity('')">
             <div class="checkbox-container">
-                <input type="checkbox" id="consent" style="width: 18px; height: 18px; margin: 0;">
-                <label for="consent" style="margin: 0; font-size: 0.9em;">Yes, subscribe me to your newsletter.*</label>
+                <input type="checkbox" id="consent">
+                <label for="consent">Yes, subscribe me to your newsletter.*</label>
                 <button type="submit">Sign Up</button>
             </div>
             <p id="error-message" class="error-message">Check the box to continue.</p>
