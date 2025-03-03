@@ -10,9 +10,17 @@
     
     <style>
         
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden; /* Prevents side scroll issues */
+        }
+
         body {
             font-family: 'Questrial', sans-serif;
             background: linear-gradient(135deg, #012E25, #000000);
+            background-size: cover; /* Ensures full coverage */
+            background-attachment: fixed; /* Keeps gradient in place */
             color: white;
             margin: 0;
             padding: 0;
@@ -96,12 +104,13 @@
 
         input {
             padding: 12px;
-            width: 100%;
+            width: calc(100% - 20px);
             border: 1px solid #ccc;
             border-radius: 50px;
             font-size: 1em;
             text-align: center;
             outline: none;
+            box-sizing: border-box;
         }
 
         .error-message {
@@ -111,6 +120,7 @@
         }
 
         button {
+            flex-shrink: 0; /* Prevents shrinking */
             padding: 12px 25px;
             background-color: white;
             color: black;
@@ -197,25 +207,29 @@
             }
         
             input {
-                width: 80%;
+                width: 100%;
                 padding: 10px;
                 font-size: 1em;
             }
         
             .checkbox-container {
-                flex-direction: flex-start;
-                align-items: left;
-                text-align: left;
+                display: flex;
+                align-items: center;  /* Ensures checkbox and text align */
+                justify-content: space-between; /* Spaces out elements */
+                gap: 10px;
+                flex-wrap: wrap; /* Allows wrapping on smaller screens */
             }
         
             button {
-                width: 50%;
                 margin-top: 10px;
             }
         
             .footer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                padding: 20px 0;
                 text-align: left;
-                padding: 5px;
             }
         
             .social-icons {
