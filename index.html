@@ -167,12 +167,19 @@
         font-size: 2em;
     }
 
-    .container, .container_2, .container_3, .container_4 {
+    .container {
         max-width: 90%;
         margin: 0 auto;
         padding: 10px;
         text-align: left;
-        margin-top: auto;
+        margin-top: 100px;
+    }
+
+    .container_2, .container_3, .container_4 {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: left;
     }
 
     h1 {
@@ -288,7 +295,7 @@
     <div class="container_4">
         <form onsubmit="subscribe(event)">
             <input type="email" id="email" placeholder="Enter your email" required oninvalid="this.setCustomValidity('Enter an email address like example@mysite.com.')" oninput="this.setCustomValidity('')">
-            <div class="checkbox-container" style="display: flex; align-items: center; gap: 5px; margin-top: 10px;">
+            <div class="checkbox-container" style="display: flex; align-items: left; gap: 5px; margin-top: 10px;">
                 <input type="checkbox" id="consent" style="width: 18px; height: 18px; margin: 0;">
                 <label for="consent" style="margin: 0; font-size: 0.9em;">Yes, subscribe me to your newsletter.*</label>
                 <button type="submit" style="margin-left: auto;">Sign Up</button>
