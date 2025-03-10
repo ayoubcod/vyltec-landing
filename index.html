@@ -52,7 +52,7 @@
             background-attachment: fixed; /* Keeps gradient in place */
             color: white;
             margin: 0;
-            padding: 0;
+            padding-top: 120px; /* Offset for fixed header */
             display: flex;
             flex-direction: column;
             justify-content: center; /* Centers everything vertically */
@@ -64,6 +64,7 @@
 
         header {
             width: 100%;
+            height: 100px; /* defined height */
             padding: 20px 5%;
             position: fixed;
             top: 0;
@@ -75,6 +76,7 @@
             background: rgba(255, 255, 255, 0); /* Fully transparent */
             backdrop-filter: blur(10px); /* Glassmorphism blur effect */
             -webkit-backdrop-filter: blur(10px); /* Safari support */
+            z-index: 10; /* Ensures header stays above all content */
         }
 
         .logo {
@@ -97,7 +99,7 @@
         .container {
             max-width: 800px;
             text-align: center;
-            margin-top: 150px;
+            margin-top: 50px; /* improved alignment */
             padding: 20px;
         }
         .container_2 {
