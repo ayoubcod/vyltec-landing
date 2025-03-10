@@ -45,6 +45,24 @@
             overflow-x: hidden; /* Prevents side scroll issues */
         }
 
+
+        header {
+            width: 100%;
+            height: 100px; /* defined height */
+            padding: 20px 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center; /* Centers logo & text */
+            align-items: center;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0); /* Fully transparent */
+            backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            z-index: 10; /* Ensures header stays above all content */
+        }
+
         body {
             font-family: 'Questrial', sans-serif;
             background: linear-gradient(135deg, #012E25, #000000);
@@ -62,21 +80,12 @@
             text-align: center; /* Ensures text is centered */
         }
 
-        header {
+        .main-content {
+            margin-top: 120px; /* matches or slightly exceeds header height */
             width: 100%;
-            height: 100px; /* defined height */
-            padding: 20px 5%;
-            position: fixed;
-            top: 0;
-            left: 0;
             display: flex;
-            justify-content: center; /* Centers logo & text */
+            flex-direction: column;
             align-items: center;
-            box-sizing: border-box;
-            background: rgba(255, 255, 255, 0); /* Fully transparent */
-            backdrop-filter: blur(10px); /* Glassmorphism blur effect */
-            -webkit-backdrop-filter: blur(10px); /* Safari support */
-            z-index: 10; /* Ensures header stays above all content */
         }
 
         .logo {
@@ -333,46 +342,48 @@
         </div>
     </header>
 
+    <div class="main-content">
 
-    <div class="container">
-        <h2>Introducing Vyltex</h2>
+        <div class="container">
+            <h2>Introducing Vyltex</h2>
+        </div>
+
+
+        <div class="container_2">
+            <h1>Empowering the Future</h1>
+            <p style="font-size: 1.1em; color: #bbb;">
+                <strong>Vyltex</strong> stands for 
+                <span style="color: #00ffcc;">Virtual Yield Lab Technology</span>, 
+                providing a virtual laboratory environment designed for advanced modeling, 
+                optimization, and data-driven solutions in renewable energy and Power-to-X applications.
+            </p>
+        </div>
+
+
+        <div class="container_3">
+            <p>Be among the first to explore <strong>Vyltex</strong>, the cutting-edge web platform transforming energy system modeling and optimization. Designed to enhance efficiency, reduce costs, and support the transition to a sustainable future, Vyltex provides powerful tools for data-driven decision-making.</p>
+            <p>Subscribe to our newsletter to stay updated on the latest advancements in energy modeling, system optimization, and digital solutions for a greener tomorrow.</p>
+        </div>
+
+
+        <div class="container_4">
+            <form onsubmit="subscribe(event)">
+                <input type="email" id="email" name="email" placeholder="Enter your email" 
+                required autocomplete="email"
+                oninvalid="this.setCustomValidity('Enter an email address like example@mysite.com.')"
+                oninput="this.setCustomValidity('')">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="consent">
+                    <label for="consent">Yes, subscribe me to your newsletter.*</label>
+                    <button type="submit">Sign Up</button>
+                </div>
+                <p id="error-message" class="error-message">Check the box to continue.</p>
+                <p id="success-message" class="error-message" style="color: green;">Thanks for subscribing!</p>
+                <p id="duplicate-message" class="error-message">This email is already subscribed.</p>
+            </form>
+        </div>
     </div>
-
-
-    <div class="container_2">
-        <h1>Empowering the Future</h1>
-        <p style="font-size: 1.1em; color: #bbb;">
-            <strong>Vyltex</strong> stands for 
-            <span style="color: #00ffcc;">Virtual Yield Lab Technology</span>, 
-            providing a virtual laboratory environment designed for advanced modeling, 
-            optimization, and data-driven solutions in renewable energy and Power-to-X applications.
-        </p>
-    </div>
-
-
-    <div class="container_3">
-        <p>Be among the first to explore <strong>Vyltex</strong>, the cutting-edge web platform transforming energy system modeling and optimization. Designed to enhance efficiency, reduce costs, and support the transition to a sustainable future, Vyltex provides powerful tools for data-driven decision-making.</p>
-        <p>Subscribe to our newsletter to stay updated on the latest advancements in energy modeling, system optimization, and digital solutions for a greener tomorrow.</p>
-    </div>
-
-
-    <div class="container_4">
-        <form onsubmit="subscribe(event)">
-            <input type="email" id="email" name="email" placeholder="Enter your email" 
-            required autocomplete="email"
-            oninvalid="this.setCustomValidity('Enter an email address like example@mysite.com.')"
-            oninput="this.setCustomValidity('')">
-            <div class="checkbox-container">
-                <input type="checkbox" id="consent">
-                <label for="consent">Yes, subscribe me to your newsletter.*</label>
-                <button type="submit">Sign Up</button>
-            </div>
-            <p id="error-message" class="error-message">Check the box to continue.</p>
-            <p id="success-message" class="error-message" style="color: green;">Thanks for subscribing!</p>
-            <p id="duplicate-message" class="error-message">This email is already subscribed.</p>
-        </form>
-    </div>
-
+    
     <footer class="footer">
         <p>© 2025 Vyltex. All rights reserved.</p>
         <p style="font-size: 0.9em; color: #bbb;">
